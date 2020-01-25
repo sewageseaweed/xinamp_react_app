@@ -15,7 +15,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
+// import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 // import InboxIcon from '@material-ui/icons/MoveToInbox';
 // import MailIcon from '@material-ui/icons/Mail';
@@ -152,7 +152,7 @@ export default function PersistentDrawerLeft() {
         <List>
           {
           [
-            <NavLink onClick={handleDrawerClose} className="Nav_Link" to='/'>HOME</NavLink>,
+            <NavLink  onClick={handleDrawerClose} className="Nav_Link" to='/'>HOME</NavLink>,
             <NavLink onClick={handleDrawerClose} className="Nav_Link" to='/about'>ABOUT</NavLink>,
             <NavLink onClick={handleDrawerClose} className="Nav_Link" to='/contact'>CONTACT</NavLink>,
             <NavLink onClick={handleDrawerClose} className="Nav_Link" to='/events'>EVENTS</NavLink>,
@@ -163,8 +163,8 @@ export default function PersistentDrawerLeft() {
 
           ].map((text, index) => (
             <ListItem button key={text}>
-              <ListItemIcon></ListItemIcon>
-              <ListItemText primary={text} />
+
+              <ListItemText primary={text} key={index} />
             </ListItem>
           ))}
         </List>

@@ -17,21 +17,20 @@ import Resources from "./components/Resources/Resources";
 class App extends Component {
   render() {
     return (
-
         <div>
           <BrowserRouter>
             <div>
               <Nav/>
               <Switch>
                 <Route path="/" component={Main} exact/>
-                <Route path="/about" component={About} exact/>
-                <Route path="/contact" component={Contact} exact/>
-                <Route path="/donate" component={Donate} exact/>
-                <Route path="/events" component={Events} exact/>
-                <Route path="/ourteam" component={OurTeam} exact/>
-                <Route path="/press" component={Press} exact/>
-                <Route path="/projects" component={Projects} exact/>
-                <Route path="/resources" component={Resources} exact/>
+                <Route path="/about" component={About} />
+                <Route path="/contact" component={Contact}/>
+                <Route path="/donate" component={Donate} />
+                <Route path="/events" component={Events} />
+                <Route path="/ourteam" component={OurTeam} />
+                <Route path="/press" component={Press} />
+                <Route path="/projects" component={Projects} />
+                <Route path="/resources" component={Resources} />
                 <Route component={Error} />
               </Switch>
             </div>
