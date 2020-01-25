@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import { makeStyles, useTheme, MuiThemeProvider,createMuiTheme } from '@material-ui/core/styles';
-import {blue, grey } from '@material-ui/core/colors';
+import {cyan, grey } from '@material-ui/core/colors';
 import { NavLink} from 'react-router-dom';
 import Drawer from '@material-ui/core/Drawer';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -30,9 +30,9 @@ const themes = createMuiTheme ({
           dark: grey[800]
         },
         secondary: {
-          main: blue['A700'],
-          light: blue['A400'],
-          dark: blue[900]
+          main: cyan['A700'],
+          light: cyan['A400'],
+          dark: cyan[900]
             
         }
       }
