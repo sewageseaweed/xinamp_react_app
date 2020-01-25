@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import Nav from './components/Nav/Nav';
+import Main from './components/Main/Main';
+import About from './components/About/About';
+import Error from './components/Error/Error';
+import './index.css';
+import Contact from "./components/Contact/Contact";
+import Donate from "./components/Donate/Donate";
+import Events from "./components/Events/Events";
+import OurTeam from "./components/OurTeam/OurTeam";
+import Press from './components/Press/Press'
+import Projects from "./components/Projects/Projects";
+import Resources from "./components/Resources/Resources";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+  render() {
+    return (
+
+        <div>
+          <BrowserRouter>
+            <div>
+              <Nav/>
+              <Switch>
+                <Route path="/" component={Main} exact/>
+                <Route path="/about" component={About} exact/>
+                <Route path="/contact" component={Contact} exact/>
+                <Route path="/donate" component={Donate} exact/>
+                <Route path="/events" component={Events} exact/>
+                <Route path="/ourteam" component={OurTeam} exact/>
+                <Route path="/press" component={Press} exact/>
+                <Route path="/projects" component={Projects} exact/>
+                <Route path="/resources" component={Resources} exact/>
+                <Route component={Error} />
+              </Switch>
+            </div>
+          </BrowserRouter>
+        </div>
+
+    );
+  }
 }
 
 export default App;
