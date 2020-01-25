@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {BrowserRouter} from 'react-router-dom';
+import {Route, Switch} from 'react-router'
 import Nav from './components/Nav/Nav';
-import Main from './components/Main/Main';
+import Home from './components/Home/Home'
 import About from './components/About/About';
 import Error from './components/Error/Error';
 import './index.css';
@@ -22,7 +23,7 @@ class App extends Component {
             <div>
               <Nav/>
               <Switch>
-                <Route path="/" component={Main} exact/>
+                <Route path="/" component={Home} exact/>
                 <Route path="/about" component={About} />
                 <Route path="/contact" component={Contact}/>
                 <Route path="/donate" component={Donate} />

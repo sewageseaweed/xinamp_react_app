@@ -162,10 +162,9 @@ export default function PersistentDrawerLeft() {
             <NavLink onClick={handleDrawerClose} className="Nav_Link" to='/resources'>RESOURCES</NavLink>,
 
           ].map((text, index) => (
-            <ListItem button key={text}>
-
-              <ListItemText primary={text} key={index} />
-            </ListItem>
+              <ListItem key={index}>
+                <ListItemText primary={text}/>
+              </ListItem>
           ))}
         </List>
         <Divider />
