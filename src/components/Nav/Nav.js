@@ -15,24 +15,30 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
-// import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-// import InboxIcon from '@material-ui/icons/MoveToInbox';
-// import MailIcon from '@material-ui/icons/Mail';
+import AccountTreeTwoToneIcon from '@material-ui/icons/AccountTreeTwoTone';
+import DraftsTwoToneIcon from '@material-ui/icons/DraftsTwoTone';
+import HomeWorkTwoToneIcon from '@material-ui/icons/HomeWorkTwoTone';
+import ContactlessTwoToneIcon from '@material-ui/icons/ContactlessTwoTone';
+import EventSeatTwoToneIcon from '@material-ui/icons/EventSeatTwoTone';
+import CreateNewFolderTwoToneIcon from '@material-ui/icons/CreateNewFolderTwoTone';
+import GroupTwoToneIcon from '@material-ui/icons/GroupTwoTone';
+import NewReleasesTwoToneIcon from '@material-ui/icons/NewReleasesTwoTone';
+
 
 const drawerWidth = 240;
 
 const themes = createMuiTheme ({
     palette: {
         primary: {
-          main: grey[900],
-          light: grey[400],
+          main: grey[50],
+          light:grey['#ffffff'],
           dark: grey[800]
         },
         secondary: {
-          main: cyan['A700'],
-          light: cyan['A400'],
-          dark: cyan[900]
+          main: cyan['A400'],
+          light: cyan['#6effff'],
+          dark: cyan['#00b2cc']
             
         }
       }
@@ -67,7 +73,7 @@ const useStyles = makeStyles(theme => ({
   },
   drawerPaper: {
     width: drawerWidth,
-    backgroundColor:grey[900],
+    backgroundColor:grey[50],
   },
   drawerHeader: {
     display: 'flex',
@@ -78,7 +84,7 @@ const useStyles = makeStyles(theme => ({
   },
   content: {
     flexGrow: 1,
-    padding: theme.spacing(3),
+    padding: theme.spacing(.01),
     transition: theme.transitions.create('margin', {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
@@ -94,7 +100,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function PersistentDrawerLeft() {
+function PersistentDrawerLeft() {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -107,7 +113,6 @@ export default function PersistentDrawerLeft() {
     setOpen(false);
   };
 
-
   return (
     <div className={classes.root}>
     <MuiThemeProvider theme ={themes}>
@@ -116,16 +121,14 @@ export default function PersistentDrawerLeft() {
         position="fixed"
         className={clsx(classes.appBar, {
           [classes.appBarShift]: open,
-        })}
-      >
+        })}>
         <Toolbar>
           <IconButton
             color="secondary"
             aria-label="open drawer"
             onClick={handleDrawerOpen}
             edge="start"
-            className={clsx(classes.menuButton, open && classes.hide)}
-          >
+            className={clsx(classes.menuButton, open && classes.hide)}>
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" color="secondary" noWrap>
@@ -152,30 +155,22 @@ export default function PersistentDrawerLeft() {
         <List>
           {
           [
-            <NavLink  onClick={handleDrawerClose} className="Nav_Link" to='/'>HOME</NavLink>,
-            <NavLink onClick={handleDrawerClose} className="Nav_Link" to='/about'>ABOUT</NavLink>,
-            <NavLink onClick={handleDrawerClose} className="Nav_Link" to='/contact'>CONTACT</NavLink>,
-            <NavLink onClick={handleDrawerClose} className="Nav_Link" to='/events'>EVENTS</NavLink>,
-            <NavLink onClick={handleDrawerClose} className="Nav_Link" to='/ourteam'>OUR TEAM</NavLink>,
-            <NavLink onClick={handleDrawerClose} className="Nav_Link" to='/press'>PRESS</NavLink>,
-            <NavLink onClick={handleDrawerClose} className="Nav_Link" to='/projects'>PROJECTS</NavLink>,
-            <NavLink onClick={handleDrawerClose} className="Nav_Link" to='/resources'>RESOURCES</NavLink>,
-
+            <NavLink onClick={handleDrawerClose} className="Nav_Link" to='/'><HomeWorkTwoToneIcon style={{marginRight:27}}/>HOME</NavLink>,
+            <NavLink onClick={handleDrawerClose} className="Nav_Link" to='/about'><ContactlessTwoToneIcon style={{marginRight:27}}/>ABOUT</NavLink>,
+            <NavLink onClick={handleDrawerClose} className="Nav_Link" to='/contact'><DraftsTwoToneIcon style={{marginRight:27}}/> CONTACT</NavLink>,
+            <NavLink onClick={handleDrawerClose} className="Nav_Link" to='/events'><EventSeatTwoToneIcon style={{marginRight:27}}/>EVENTS</NavLink>,
+            <NavLink onClick={handleDrawerClose} className="Nav_Link" to='/ourteam'> <GroupTwoToneIcon style={{marginRight:27}}/>OUR TEAM</NavLink>,
+            <NavLink onClick={handleDrawerClose} className="Nav_Link" to='/press'><NewReleasesTwoToneIcon style={{marginRight:27}}/>PRESS</NavLink>,
+            <NavLink onClick={handleDrawerClose} className="Nav_Link" to='/projects'> <AccountTreeTwoToneIcon style={{marginRight:27}}/>PROJECTS</NavLink>,
+            <NavLink onClick={handleDrawerClose} className="Nav_Link" to='/resources'><CreateNewFolderTwoToneIcon style={{marginRight:27}}/> RESOURCES</NavLink>,
           ].map((text, index) => (
               <ListItem key={index}>
+              {/*<ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <ContactlessTwoToneIcon /> ? <MailIcon/>: <CreateNewFolderTwoToneIcon/> }</ListItemIcon>*/}
                 <ListItemText primary={text}/>
               </ListItem>
           ))}
         </List>
-        <Divider />
-        {/*<List>*/}
-        {/*  {['All mail', 'Trash', 'Spam'].map((text, index) => (*/}
-        {/*    <ListItem button key={text}>*/}
-        {/*      <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>*/}
-        {/*      <ListItemText primary={text} />*/}
-        {/*    </ListItem>*/}
-        {/*  ))}*/}
-        {/*</List>*/}
+
       </Drawer>
       <main
         className={clsx(classes.content, {
@@ -183,14 +178,10 @@ export default function PersistentDrawerLeft() {
         })}
       >
         <div className={classes.drawerHeader} />
-        {/* <Typography paragraph>
-
-        </Typography>
-        <Typography paragraph>
-          
-        </Typography> */}
       </main>
       </MuiThemeProvider>
     </div>
   );
 }
+
+export default PersistentDrawerLeft

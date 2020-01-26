@@ -4,8 +4,10 @@ import React, { Component } from 'react';
 class Home extends Component {
 
     render() { 
-        return ( 
-            <p>Main Page</p>
+        return (
+            <div className="AppLight">
+                <p>Main Page</p>
+            </div>
          );
     }
 }
