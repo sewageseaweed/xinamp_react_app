@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {BrowserRouter} from 'react-router-dom';
 import {Route, Switch} from 'react-router'
 import Nav from './components/Nav/Nav';
+import Footer from './components/Footer/Footer'
 import Home from './components/Home/Home'
 import About from './components/About/About';
 import Error from './components/Error/Error';
@@ -34,6 +35,7 @@ class App extends Component {
                 <Route path="/resources" component={Resources} />
                 <Route component={Error} />
               </Switch>
+              <Footer/>
             </div>
           </BrowserRouter>
         </div>

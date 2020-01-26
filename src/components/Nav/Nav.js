@@ -19,12 +19,11 @@ import ListItemText from '@material-ui/core/ListItemText';
 import AccountTreeTwoToneIcon from '@material-ui/icons/AccountTreeTwoTone';
 import DraftsTwoToneIcon from '@material-ui/icons/DraftsTwoTone';
 import HomeWorkTwoToneIcon from '@material-ui/icons/HomeWorkTwoTone';
-import ContactlessTwoToneIcon from '@material-ui/icons/ContactlessTwoTone';
 import EventSeatTwoToneIcon from '@material-ui/icons/EventSeatTwoTone';
 import CreateNewFolderTwoToneIcon from '@material-ui/icons/CreateNewFolderTwoTone';
 import GroupTwoToneIcon from '@material-ui/icons/GroupTwoTone';
-import NewReleasesTwoToneIcon from '@material-ui/icons/NewReleasesTwoTone';
-
+import ReceiptTwoToneIcon from '@material-ui/icons/ReceiptTwoTone';
+import ImportContactsTwoToneIcon from '@material-ui/icons/ImportContactsTwoTone';
 
 const drawerWidth = 240;
 
@@ -42,7 +41,7 @@ const themes = createMuiTheme ({
             
         }
       }
-})
+});
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
@@ -156,11 +155,11 @@ function PersistentDrawerLeft() {
           {
           [
             <NavLink onClick={handleDrawerClose} className="Nav_Link" to='/'><HomeWorkTwoToneIcon style={{marginRight:27}}/>HOME</NavLink>,
-            <NavLink onClick={handleDrawerClose} className="Nav_Link" to='/about'><ContactlessTwoToneIcon style={{marginRight:27}}/>ABOUT</NavLink>,
+            <NavLink onClick={handleDrawerClose} className="Nav_Link" to='/about'><ImportContactsTwoToneIcon style={{marginRight:27}}/>ABOUT</NavLink>,
             <NavLink onClick={handleDrawerClose} className="Nav_Link" to='/contact'><DraftsTwoToneIcon style={{marginRight:27}}/> CONTACT</NavLink>,
             <NavLink onClick={handleDrawerClose} className="Nav_Link" to='/events'><EventSeatTwoToneIcon style={{marginRight:27}}/>EVENTS</NavLink>,
             <NavLink onClick={handleDrawerClose} className="Nav_Link" to='/ourteam'> <GroupTwoToneIcon style={{marginRight:27}}/>OUR TEAM</NavLink>,
-            <NavLink onClick={handleDrawerClose} className="Nav_Link" to='/press'><NewReleasesTwoToneIcon style={{marginRight:27}}/>PRESS</NavLink>,
+            <NavLink onClick={handleDrawerClose} className="Nav_Link" to='/press'><ReceiptTwoToneIcon style={{marginRight:27}}/>PRESS</NavLink>,
             <NavLink onClick={handleDrawerClose} className="Nav_Link" to='/projects'> <AccountTreeTwoToneIcon style={{marginRight:27}}/>PROJECTS</NavLink>,
             <NavLink onClick={handleDrawerClose} className="Nav_Link" to='/resources'><CreateNewFolderTwoToneIcon style={{marginRight:27}}/> RESOURCES</NavLink>,
           ].map((text, index) => (
