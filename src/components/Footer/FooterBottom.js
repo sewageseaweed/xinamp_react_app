@@ -1,15 +1,20 @@
 import React from 'react';
-import {makeStyles,createMuiTheme,MuiThemeProvider, Paper} from '@material-ui/core';
-import {cyan, grey} from '@material-ui/core/colors';
-
+import {makeStyles,createMuiTheme, MuiThemeProvider} from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import {cyan, grey} from "@material-ui/core/colors";
 
 
 const themes = createMuiTheme ({
     palette: {
         primary: {
-            main: grey[50],
+            main: grey[800],
             light:grey['#ffffff'],
-            dark: grey[800]
+            dark: grey[700]
         },
         secondary: {
             main: cyan['A400'],
@@ -19,61 +24,36 @@ const themes = createMuiTheme ({
         }
     }
 });
-
 const useStyles = makeStyles(theme => ({
     root: {
         flexGrow: 1,
-        color: theme.palette.common.white,
-        ...theme.mixins
     },
-    appBar: {
-        transition: theme.transitions.create(['margin', 'width'], {
-            easing: theme.transitions.easing.sharp,
-            duration: theme.transitions.duration.leavingScreen,
-        }),
+    menuButton: {
+        marginRight: theme.spacing(2),
     },
-
-    hide: {
-        display: 'none',
+    title: {
+        flexGrow: 1,
     },
-    tinFooter: {
-        backgroundColor:grey[800],
-        paddingTop:2,
-        marginBottom:14
-
-    },
-    tinFooterCyan: {
-        backgroundColor:cyan['A700'],
-        paddingTop:2,
-
-
-    },
-    footerPaper: {
-        marginTop:50,
-        backgroundColor:grey[900],
-        paddingTop:20
-
-    },
-    paper:{
-        backgroundColor:grey[800]
-    }
-
 }));
 
-const FooterBottom = () => {
+ function FooterBottom() {
     const classes = useStyles();
     return (
         <MuiThemeProvider theme={themes}>
-            <div className="AppLight">
-                <div className={classes.root}>
-                    <Paper className={classes.paper} elevation={1}>
-                        <Paper className={classes.tinFooterCyan}> </Paper>
-
-                    </Paper>
-                </div>
-            </div>
+        <div className={classes.root}>
+            <AppBar position="static" color={"primary"}>
+                <Toolbar>
+                    <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+                        <MenuIcon />
+                    </IconButton>
+                    <Typography variant="h6" className={classes.title}>
+                        News
+                    </Typography>
+                    <Button color="inherit">Login</Button>
+                </Toolbar>
+            </AppBar>
+        </div>
         </MuiThemeProvider>
-
     );
-};
+}
 export default FooterBottom

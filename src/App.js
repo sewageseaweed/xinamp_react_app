@@ -5,6 +5,7 @@ import Nav from './components/Nav/Nav';
 import Footer from './components/Footer/Footer'
 import Home from './components/Home/Home'
 import About from './components/About/About';
+import Blog from './components/Blog/Blog'
 import Error from './components/Error/Error';
 import './index.css';
 import Contact from "./components/Contact/Contact";
@@ -26,6 +27,7 @@ class App extends Component {
               <Switch>
                 <Route path="/" component={Home} exact/>
                 <Route path="/about" component={About} />
+                <Route path="/blog" component={Blog}/>
                 <Route path="/contact" component={Contact}/>
                 <Route path="/donate" component={Donate} />
                 <Route path="/events" component={Events} />

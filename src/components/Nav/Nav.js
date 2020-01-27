@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import { makeStyles, useTheme, MuiThemeProvider,createMuiTheme } from '@material-ui/core/styles';
+import { makeStyles, useTheme, MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import {cyan, grey } from '@material-ui/core/colors';
 import { NavLink} from 'react-router-dom';
 import Drawer from '@material-ui/core/Drawer';
@@ -17,6 +17,7 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import AccountTreeTwoToneIcon from '@material-ui/icons/AccountTreeTwoTone';
+import WidgetsTwoToneIcon from '@material-ui/icons/WidgetsTwoTone';
 import DraftsTwoToneIcon from '@material-ui/icons/DraftsTwoTone';
 import HomeWorkTwoToneIcon from '@material-ui/icons/HomeWorkTwoTone';
 import EventSeatTwoToneIcon from '@material-ui/icons/EventSeatTwoTone';
@@ -156,20 +157,19 @@ function PersistentDrawerLeft() {
           [
             <NavLink onClick={handleDrawerClose} className="Nav_Link" to='/'><HomeWorkTwoToneIcon style={{marginRight:27}}/>HOME</NavLink>,
             <NavLink onClick={handleDrawerClose} className="Nav_Link" to='/about'><ImportContactsTwoToneIcon style={{marginRight:27}}/>ABOUT</NavLink>,
-            <NavLink onClick={handleDrawerClose} className="Nav_Link" to='/contact'><DraftsTwoToneIcon style={{marginRight:27}}/> CONTACT</NavLink>,
+            <NavLink onClick={handleDrawerClose} className="Nav_Link" to='/blog'><WidgetsTwoToneIcon style={{marginRight:27}}/>BLOG</NavLink>,
+            <NavLink onClick={handleDrawerClose} className="Nav_Link" to='/contact'><DraftsTwoToneIcon style={{marginRight:27}}/>CONTACT</NavLink>,
             <NavLink onClick={handleDrawerClose} className="Nav_Link" to='/events'><EventSeatTwoToneIcon style={{marginRight:27}}/>EVENTS</NavLink>,
             <NavLink onClick={handleDrawerClose} className="Nav_Link" to='/ourteam'> <GroupTwoToneIcon style={{marginRight:27}}/>OUR TEAM</NavLink>,
             <NavLink onClick={handleDrawerClose} className="Nav_Link" to='/press'><ReceiptTwoToneIcon style={{marginRight:27}}/>PRESS</NavLink>,
             <NavLink onClick={handleDrawerClose} className="Nav_Link" to='/projects'> <AccountTreeTwoToneIcon style={{marginRight:27}}/>PROJECTS</NavLink>,
-            <NavLink onClick={handleDrawerClose} className="Nav_Link" to='/resources'><CreateNewFolderTwoToneIcon style={{marginRight:27}}/> RESOURCES</NavLink>,
+            <NavLink onClick={handleDrawerClose} className="Nav_Link" to='/resources'><CreateNewFolderTwoToneIcon style={{marginRight:27}}/>RESOURCES</NavLink>,
           ].map((text, index) => (
               <ListItem key={index}>
-              {/*<ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <ContactlessTwoToneIcon /> ? <MailIcon/>: <CreateNewFolderTwoToneIcon/> }</ListItemIcon>*/}
                 <ListItemText primary={text}/>
               </ListItem>
           ))}
         </List>
-
       </Drawer>
       <main
         className={clsx(classes.content, {
